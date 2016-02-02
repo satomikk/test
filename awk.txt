@@ -1,0 +1,6 @@
+echo 'f-W;Kik=cKH[N2Ey(q>MoiI,w#]QnN4V' |
+awk -F'\\[|\\]|\\(|\\)|\\<|\\>' '{print $1}'
+
+
+echo 'f-W;Kik=cKH[N2Ey(q>MoiI,w#]QnN4V' |
+awk -F'[,;]' '{print $1}'s
