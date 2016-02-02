@@ -17,14 +17,20 @@ cat << _EOF_ > IDFILE
 _EOF_
 
 join -1 1 -2 2 IDFILE LOGFILE
+
 001 Momo kitten 1926/06/01 mew mew mew
 002 Choco cat 1972/12/22 meow
 003 Kitty kitten 1985/02/18 mew mew mew
 004 Punk cat 1991/04/01 meow
 006 Leon puppy 2001/03/10 yelp yelp
 
+
+
 join -1 1 -2 2 -v 1 IDFILE LOGFILE
+
 005 Pink pig
 
+
 join -1 1 -2 2 -v 2 IDFILE LOGFILE
+
 2016/02/02 007 kkkk
