@@ -1,0 +1,5 @@
+ARG='20151009'
+YY=`echo ${ARG} | awk '{print substr($0, 1, 4)}'`
+MM=`echo ${ARG} | awk '{print substr($0, 5, 2)}'`
+TARGET_MONTH=${YY}-${MM}
+echo ${TARGET_MONTH}

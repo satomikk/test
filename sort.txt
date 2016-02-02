@@ -1,0 +1,23 @@
+cat <<_EOF_ > LOGFILE
+piyo
+hoyo
+nyao
+ciao
+ciao
+piyo
+nyao
+piyo
+hoyo
+nyao
+nyao
+ciao
+gyao
+_EOF_
+
+
+cat LOGFILE |sort |uniq -c |sort -nr
+      4 nyao
+      3 piyo
+      3 ciao
+      2 hoyo
+      1 gyao

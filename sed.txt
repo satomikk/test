@@ -1,0 +1,36 @@
+cat << _EOF_ > LOGFILE
+1926/06/01 001 mew mew mew
+1972/12/22 002 meow
+1985/02/18 003 mew mew mew
+1991/04/01 004 meow
+2001/03/10 006 yelp yelp
+2016/02/02 007 kkkk
+_EOF_
+
+
+# mew -> mow íuä∑
+cat LOGFILE |sed 's|mew|mow|g'
+cat LOGFILE |sed 's/mew/mow/g'
+
+1926/06/01 001 mow mow mow
+1972/12/22 002 meow
+1985/02/18 003 mow mow mow
+1991/04/01 004 meow
+2001/03/10 006 yelp yelp
+2016/02/02 007 kkkk
+
+
+# mew Ç™ä‹Ç‹ÇÍÇÈçsÇçÌèú
+cat LOGFILE |sed '/mew/d'
+
+1972/12/22 002 meow
+1991/04/01 004 meow
+2001/03/10 006 yelp yelp
+2016/02/02 007 kkkk
+
+
+# mew Ç™ä‹Ç‹ÇÍÇ»Ç¢çsÇçÌèú
+cat LOGFILE |sed '/mew/!d'
+
+1926/06/01 001 mew mew mew
+1985/02/18 003 mew mew mew
