@@ -1,10 +1,34 @@
-echo 'f-W;Kik=cKH[N2Ey(q>MoiI,w#]QnN4V' |
-awk -F'\\[|\\]|\\(|\\)|\\<|\\>' '{print $1}'
+# echo 'f-W;Kik=cKH[N2Ey(q>MoiI,w#]QnN4V' |
+# awk -F'\\[|\\]|\\(|\\)|\\<|\\>' '{print $1}'
 
 f-W;Kik=cKH
 
 
-echo 'f-W;Kik=cKH[N2Ey(q>MoiI,w#]QnN4V' |
-awk -F'[,;]' '{print $1}'s
+
+# echo 'f-W;Kik=cKH[N2Ey(q>MoiI,w#]QnN4V' |
+# awk -F'[,;]' '{print $1}'s
 
 f-W
+
+
+
+# cat << EOF > awk.test
+123456789012345 15 aaa bbb ccc ddd
+1234567890123456 16 aaa bbb ccc ddd
+12345678901234567 17 aaa bbb ccc ddd
+12345678901234567 18aaa bbb ccc ddd
+EOF
+
+
+
+## awk '条件文{実行文}'　ファイル名 ##
+
+$ cat awk.test     |
+> # awk '条件文{実行文}'　ファイル名
+> awk 'length($1) == 16 {print $1, $5}'
+1234567890123456 ccc
+
+$ cat awk.test                            |
+> awk 'length($1) == 16'                  |
+> awk '{print $1,$5}'
+1234567890123456 ccc
