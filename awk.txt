@@ -11,12 +11,11 @@ f-W;Kik=cKH
 f-W
 
 
-
 # cat << EOF > awk.test
 123456789012345 15 aaa bbb ccc ddd
 1234567890123456 16 aaa bbb ccc ddd
 12345678901234567 17 aaa bbb ccc ddd
-12345678901234567 18aaa bbb ccc ddd
+12345678901234567 18 aaa 123 ccc 123
 EOF
 
 
@@ -32,3 +31,17 @@ $ cat awk.test                            |
 > awk 'length($1) == 16'                  |
 > awk '{print $1,$5}'
 1234567890123456 ccc
+
+# awk '条件文{実行文}'　ファイル名
+cat awk.test |awk '$4 == $6 {print $0}'
+
+
+[satomi@grace ~]$ cat << EOF > awk.test
+> 1 1/2/3/4/5/6/7/8/9
+> 2 1/2/3/4/5/6/7/8/9
+> 3 1/2/3/4/5/6/7/8/9
+> EOF
+[satomi@grace ~]$
+
+[satomi@grace ~]$ cat awk.test |awk -F '[\\/ ]' '$1 == $4 {print $0}'
+3 1/2/3/4/5/6/7/8/9
